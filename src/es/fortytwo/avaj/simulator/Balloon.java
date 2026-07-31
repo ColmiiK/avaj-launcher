@@ -21,25 +21,25 @@ public class Balloon extends Aircraft {
         currentHeight = this.coordinates.getHeight();
         this.coordinates.setLatitude(currentLatitude + 2);
         this.coordinates.setHeight(currentHeight + 4);
-        System.out.println(this.getLogInfo() + ": SUNNY");
+        System.out.println(this.getLogInfo() + ": It's always sunny in Málaga");
         checkHeight();
         break;
       case "RAIN":
         currentHeight = this.coordinates.getHeight();
         this.coordinates.setHeight(currentHeight - 5);
-        System.out.println(this.getLogInfo() + ": RAINY");
+        System.out.println(this.getLogInfo() + ": I love the smell of rain in the morning");
         checkHeight();
         break;
       case "FOG":
         currentHeight = this.coordinates.getHeight();
         this.coordinates.setHeight(currentHeight - 3);
-        System.out.println(this.getLogInfo() + ": FOGGY");
+        System.out.println(this.getLogInfo() + ": Silent Hill vibes");
         checkHeight();
         break;
       case "SNOW":
         currentHeight = this.coordinates.getHeight();
         this.coordinates.setHeight(currentHeight - 15);
-        System.out.println(this.getLogInfo() + ": SNOWY");
+        System.out.println(this.getLogInfo() + ": Don't eat the yellow snow");
         checkHeight();
         break;
       default:
