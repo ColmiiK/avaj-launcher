@@ -2,6 +2,8 @@ package es.fortytwo.avaj.simulator;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -27,6 +29,7 @@ public class Simulator {
       return;
     }
     try {
+      System.setOut(new PrintStream(new FileOutputStream("simulation.txt")));
       File scenario = new File(args[0]);
       Scanner reader = new Scanner(scenario);
       List<Flyable> flyables = new ArrayList<>();
