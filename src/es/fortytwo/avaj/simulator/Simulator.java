@@ -15,9 +15,29 @@ public class Simulator {
     AircraftFactory factory = AircraftFactory.getFactory();
     while (reader.hasNextLine()) {
       String line = reader.nextLine();
-      String[] words = line.split(" ");
-      Coordinates coordinates = new Coordinates(Integer.parseInt(words[2]), Integer.parseInt(words[3]),
-          Integer.parseInt(words[4]));
+      String[] words = line.trim().split("\\s+");
+
+      if (words.length != 5)
+        throw new IllegalArgumentException("Input line has an incorrect number of parameters");
+
+      Integer[] numbers;
+
+      try {
+        numbers = new Integer[] {
+          Integer.parseInt(words[2]),
+          Integer.parseInt(words[3]),
+          Integer.parseInt(words[4])
+        };
+      } catch (NumberFormatException e) {
+          throw new IllegalArgumentException("Coordinates must be integers");
+      }
+
+      for (int n : numbers) {
+        if (n <= 0)
+          throw new IllegalArgumentException("All coordinates must be positive");
+      }
+
+      Coordinates coordinates = new Coordinates(numbers[0], numbers[1], numbers[2]);
       flyables.add(factory.newAircraft(words[0], words[1], coordinates));
     }
     return flyables;
