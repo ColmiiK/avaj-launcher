@@ -21,13 +21,13 @@ public class JetPlane extends Aircraft {
         currentHeight = this.coordinates.getHeight();
         this.coordinates.setLatitude(currentLatitude + 10);
         this.coordinates.setHeight(currentHeight + 2);
-        System.out.println(this.getLogInfo() + ": Flying close to the sun");
+        System.out.println(this.getLogInfo() + ": Flying close to the sun.");
         checkHeight();
         break;
       case "RAIN":
         currentLatitude = this.coordinates.getLatitude();
         this.coordinates.setLatitude(currentLatitude + 5);
-        System.out.println(this.getLogInfo() + ": Raining sideways");
+        System.out.println(this.getLogInfo() + ": Raining sideways.");
         break;
       case "FOG":
         currentLatitude = this.coordinates.getLatitude();

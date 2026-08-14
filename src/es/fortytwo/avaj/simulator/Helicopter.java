@@ -27,17 +27,17 @@ public class Helicopter extends Aircraft {
       case "RAIN":
         currentLongitude = this.coordinates.getLongitude();
         this.coordinates.setLongitude(currentLongitude + 5);
-        System.out.println(this.getLogInfo() + ": It's raining men");
+        System.out.println(this.getLogInfo() + ": It's raining men.");
         break;
       case "FOG":
         currentLongitude = this.coordinates.getLongitude();
         this.coordinates.setLongitude(currentLongitude + 1);
-        System.out.println(this.getLogInfo() + ": Let's get a closer look at that mall");
+        System.out.println(this.getLogInfo() + ": Let's get a closer look at that mall.");
         break;
       case "SNOW":
         currentHeight = this.coordinates.getHeight();
         this.coordinates.setHeight(currentHeight - 12);
-        System.out.println(this.getLogInfo() + ": Let me turn on the heating");
+        System.out.println(this.getLogInfo() + ": Let me turn on the heating.");
         checkHeight();
         break;
       default:
